@@ -8,9 +8,9 @@ const router = express.Router();
 // router.use(requireAuth);
 
 router.get('/recipes', async (req, res) => {
-  const tracks = await Track.all;
+  const recipes = await Recipe.all;
 
-  res.send(tracks);
+  res.send(recipes);
 });
 
 router.post('/recipes', async (req, res) => {
