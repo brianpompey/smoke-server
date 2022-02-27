@@ -6,6 +6,9 @@ const recipeRoutes = require('./routes/recipeRoutes');
 
 const app = express();
 
+const mongoUri = 'mongodb+srv://brianpompey:password@cluster0.5udqq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+mongoose.connect(mongoUri);
+
 app.get('/', (req, res) => {
     res.send('Hi there!');
 });
