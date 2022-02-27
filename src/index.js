@@ -1,12 +1,15 @@
+require('./models/User');
+require('./models/Recipe');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const recipeRoutes = require('./routes/recipeRoutes');
-// const requireAuth = require('./middlewares/requireAuth');
+const authRoutes = require('./routes/authRoutes');
+const requireAuth = require('./middlewares/requireAuth');
 
 const app = express();
 app.use(bodyParser.json());
-// app.use(recipeRoutes);
+app.use(recipeRoutes);
 
 const mongoUri = 'mongodb+srv://brianpompey:passwordpassword@cluster0.5udqq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 mongoose.connect(mongoUri);
